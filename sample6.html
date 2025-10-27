@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information || - Form</title>
+</head>
+<style>
+    body{
+        background-color: rgba(127, 255, 212, 0.547);
+        text-align: center;
+    }
+    marquee{
+        background-color: aliceblue;
+    }
+
+</style>
+
+<body>
+    <marquee>WELCOME TO OUR SITE</marquee>
+    <h2>Name</h2>
+    <label for="name">Enter your Name</label>
+    <input type="text">
+    <br>
+    <h2>Phone Number</h2>
+    <label for="number">Enter your Phone number</label>
+    <input type="number">
+    <br>
+
+    <h2>Email</h2>
+    <label for="emailInput">Enter your Email Address</label>
+    <input type="text" id="emailInput">
+    <button onclick="validateAndReenterEmail()">Validate Email</button>
+    <br>
+    
+<script>
+    function validateAndReenterEmail(){
+        let email = document.getElementById('emailInput').value;
+
+        if(email.includes('@') && email.includes('.')){
+            alert("Email address is valid");
+        }
+        else{
+            alert("Error: Email address must contain both '@' and '.' character. Please re-enter");
+            document.getElementById('emailInput').value="";
+            document.getElementById('emailInput').focus();
+        }
+    }
+</script>
+</body>
+
+</html>

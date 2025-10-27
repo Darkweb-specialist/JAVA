@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            transition: background-color 0.5s ease;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Background Color</h1>
+    <h2>The background color will change every 5 second</h2>
+    <script>
+        const colors = ['blue','green','yellow','red','black','purple']
+        let colorIndex = 0;
+
+        function changeBackgroundColor(){
+            document.body.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+
+        changeBackgroundColor();
+        setInterval(changeBackgroundColor , 5000);
+    </script>
+</body>
+</html>
